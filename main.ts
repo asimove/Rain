@@ -1,3 +1,4 @@
+let list: number[] = []
 function Sun () {
     for (let index = 0; index < 4; index++) {
         images.createImage(`
@@ -17,6 +18,14 @@ function Sun () {
         led.unplot(3, 1)
         basic.pause(500)
     }
+    basic.clearScreen()
+}
+function alarm () {
+    list = [0, 1, 2, 4]
+    for (let value of list) {
+        led.toggle(2, value)
+    }
+    basic.pause(500)
     basic.clearScreen()
 }
 function rainPos (X: number, Y: number) {
@@ -43,43 +52,40 @@ function rainPos (X: number, Y: number) {
 // rainPos(4, 3)
 // rainPos(4, 4)
 basic.forever(function () {
-    led.plot(1, 0)
-    led.plot(2, 0)
-    led.plot(3, 0)
-    led.plot(0, 1)
-    led.plot(1, 2)
-    led.plot(1, 3)
-    led.plot(2, 3)
-    led.plot(3, 3)
-    led.plot(4, 1)
-    led.plot(4, 2)
-    /* */
+    alarm()
+    // led.plot(1, 0)
+    // led.plot(2, 0)
+    // led.plot(3, 0)
+    // led.plot(0, 1)
+    // led.plot(1, 2)
+    // led.plot(1, 3)
+    // led.plot(2, 3)
+    // led.plot(3, 3)
+    // led.plot(4, 1)
+    // led.plot(4, 2)
+    // basic.pause(600)
+    // led.unplot(1, 0)
+    // led.unplot(2, 0)
+    // led.unplot(3, 0)
+    // led.unplot(0, 1)
+    // led.unplot(1, 2)
+    // led.unplot(1, 3)
+    // led.unplot(2, 3)
+    // led.unplot(3, 3)
+    // led.unplot(4, 1)
+    // led.unplot(4, 2)
+    // basic.pause(600)
+    // // basic.clearScreen()
+    // led.plot(1, 1)
+    // led.plot(2, 1)
+    // led.plot(3, 1)
+    // led.plot(0, 2)
+    // led.plot(0, 3)
+    // led.plot(1, 4)
+    // led.plot(2, 4)
+    // led.plot(3, 4)
+    // led.plot(4, 2)
+    // led.plot(4, 3)
     basic.pause(600)
-    led.unplot(1, 0)
-    led.unplot(2, 0)
-    led.unplot(3, 0)
-    led.unplot(0, 1)
-    led.unplot(1, 2)
-    led.unplot(1, 3)
-    led.unplot(2, 3)
-    led.unplot(3, 3)
-    led.unplot(4, 1)
-    led.unplot(4, 2)
-    basic.pause(600)
-    //basic.clearScreen()
-   led.plot(1, 1)
-   led.plot(2, 1)
-   led.plot(3, 1)
-   /**/
-   led.plot(0, 2)
-   led.plot(0, 3)
-   /**/
-   led.plot(1, 4)
-   led.plot(2, 4)
-   led.plot(3, 4)
-   /* */
-   led.plot(4, 2)
-   led.plot(4, 3)
-   basic.pause(600)
-   basic.clearScreen()
+    basic.clearScreen()
 })
